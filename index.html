@@ -2,12 +2,13 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no"/>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no"/>
     <title>海西网络-郑州海西网络技术有限公司</title>
     <meta name="baidu-site-verification" content="RrZKFnqSsc"/>
     <meta name="description" content="郑州海西网络技术有限公司—专注于为客户提供引领行业的移动互联网软件定制开发服务"/>
     <meta name="keywords" content="郑州海西网络技术有限公司,APP开发,软件开发,HTML5开发,微信开发,高端网站建设,营销推广"/>
-    <link rel="icon" href="templets/default/images/favicon.png" type="image/x-icon">  
+    <link rel="icon" href="templets/default/images/favicon.png" type="image/x-icon">
     <link href="templets/default/css/bootstrap.min.css" type="text/css" rel="stylesheet"/>
     <link href="templets/default/scss/style.min.css" type="text/css" rel="stylesheet"/>
     <link href="templets/default/css/startcom.css" type="text/css" rel="stylesheet"/>
@@ -19,97 +20,7 @@
     <script type="text/javascript" src="templets/default/javascript/jquery.touchSlider.js"></script>
     <script src="templets/default/javascript/script-about.js" type="text/javascript"></script><!--pc端图片切换js-->
     <script type="text/javascript">
-        ; (function ($) {
-            $.fn.placeholder = function (options) {
-                var opts = $.extend({}, $.fn.placeholder.defaults, options);
-                var isIE = document.all ? true : false;
-                return this.each(function () {
-                    var _this = this,
-                        placeholderValue = _this.getAttribute("placeholder"); //缓存默认的placeholder值
-                    if (isIE) {
-                        _this.setAttribute("value", placeholderValue);
-                        _this.onfocus = function () {
-                            $.trim(_this.value) == placeholderValue ? _this.value = "" : '';
-                        };
-                        _this.onblur = function () {
-                            $.trim(_this.value) == "" ? _this.value = placeholderValue : '';
-                        };
-                    }
-                });
-            };
-        })(jQuery);
-    </script>
-    <script type="text/javascript">
-             <!--表单验证 -->
-    function ischeck() {
-        var reg = /^0?1[3-9][0-9]{9}$/;
-        var name = $("#name").val();
-        var tel = $("#mobile").val();
-        var desc = $("#content").val();
-
-        if (name.length == 0) {
-            $("#name").focus();
-            layer.msg('请输入姓名');
-            return false;
-
-        }
-        else if (tel.length ==0) {
-            $("#tel").focus();
-            layer.msg("请输入手机号");
-            return false;
-        }
-        else if (!reg.test(tel) || tel.length > 11) {
-            $("#tel").focus();
-            layer.msg("手机号格式错误");
-            return false;
-        }
-
-        else if (desc.length ==0) {
-            $("#desc").focus();
-            layer.msg("请输入项目描述");
-            return false;
-        }
-
-        else {
-            return true;
-        }
-    }
-
-
-    function GoInput() {
-
-        if (ischeck()) {
-            var name = $("#name").val();
-            var tel = $("#mobile").val();
-            var desc = $("#content").val();
-            $.ajax({
-                url: "/submit",
-                type: "Post",
-                data: { name: escape(name),tel: escape(tel), desc: escape(desc) },
-                success: function (msg) {
-                    if (msg == "success") {
-                        layer.msg("提交成功", { time: 2000 }, function () {
-                            window.location.reload();
-                        });
-                    } else {
-                        alert(msg);
-                    }
-                }
-            })
-        }
-    }
-    </script>
-    <script type="text/javascript">
         $(document).ready(function () {
-            //tab切换
-            $("ul.tabs li").click(function () {
-                $("ul.tabs li").removeClass("active"); //Remove any "active" class
-                $(this).addClass("active"); //Add "active" class to selected tab
-                $(".tab_content").hide(); //Hide all tab content
-                var activeTab = $(this).find("a").attr("href"); //Find the rel attribute value to identify the active tab + content
-                $(activeTab).fadeIn(); //Fade in the active content
-                return false;
-            });
             //鼠标经改变图片路径
             $('.customer_logo li').mouseenter(function () {
                 $(this).children('p').hide();
@@ -144,11 +55,12 @@
         #banner .banner-item:nth-child(2) .banner-img {
             background-image: url(templets/default/images/banner1.jpg);
         }
+
         #banner .banner-item:nth-child(3) .banner-img {
             background-image: url(templets/default/images/banner2.jpg);
         }
 
-        @media (-webkit-min-device-pixel-ratio:2) {
+        @media (-webkit-min-device-pixel-ratio: 2) {
             #banner .banner-item:nth-child(1) .banner-img {
                 background-image: url(templets/default/images/banner0.jpg) !important;
             }
@@ -156,7 +68,8 @@
             #banner .banner-item:nth-child(2) .banner-img {
                 background-image: url(templets/default/images/banner1.jpg) !important;
             }
-        #banner .banner-item:nth-child(3) .banner-img {
+
+            #banner .banner-item:nth-child(3) .banner-img {
                 background-image: url(templets/default/images/banner2.jpg) !important;
             }
         }
@@ -185,10 +98,12 @@
             #banner .banner-item:nth-child(2) .banner-img {
                 background-image: url(templets/default/images/banner1.jpg) !important;
             }
+
             #banner .banner-item:nth-child(3) .banner-img {
                 background-image: url(templets/default/images/banner2.jpg) !important;
             }
         }
+
         /*banner css end*/
 
         @media only screen and (max-width: 767px) {
@@ -211,1014 +126,927 @@
         }
 
         .banner .banner-item .banner-text > div {
-            margin-top: 18%\9; /*兼容IE6 IE7 IE8*/
+            margin-top: 18% \9; /*兼容IE6 IE7 IE8*/
         }
 
         .slideup_info_bg > div {
-            margin-top: 32%\9; /*兼容IE6 IE7 IE8*/
+            margin-top: 32% \9; /*兼容IE6 IE7 IE8*/
         }
-		.carousel-caption {
-			top: 25%;
-		}
+
+        .carousel-caption {
+            top: 25%;
+        }
+
         @media (min-width: 767px) {
-			.carousel-caption {
-				zoom:1.5;
-			}
-		}
+            .carousel-caption {
+                zoom: 1.5;
+            }
+        }
     </style>
 </head>
 <body style="background:#fff;" id="index.html">
-    <nav class="navbar navbar-default navbar-fixed-top u-navbar">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar icon-bar1"></span> <span class="icon-bar"></span> <span class="icon-bar icon-bar2"></span> </button>
-            <a class="navbar-brand" href="index.html">
-                <figure class="ac-logo-icon pc-none"></figure>
-                <div class="logo-pc-div app-none">
-                    <figure class="ac-familybrowser-icon"></figure>
-                </div>
+<nav class="navbar navbar-default navbar-fixed-top u-navbar">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed"><span class="sr-only">Toggle navigation</span> <span
+                class="icon-bar icon-bar1"></span> <span class="icon-bar"></span> <span
+                class="icon-bar icon-bar2"></span></button>
+        <a class="navbar-brand" href="/">
+            <figure class="ac-logo-icon pc-none"></figure>
+            <div class="logo-pc-div app-none">
+                <figure class="ac-familybrowser-icon"></figure>
+            </div>
+        </a>
+        <form class="navbar-right pc-none">
+            <a class="top-tel-phone" href="tel:13071065058"></a>
+        </form>
+    </div>
+    <div class="navbar-collapse collapse navbar-right" style="height: auto;">
+        <!-- Main navigation -->
+        <ul class="nav navbar-nav">
+            <li class="click"><a href="#index.html">首页</a>
+                <p class="line-top"></p></li>
+            <li><a href="#service.html">服务</a></li>
+            <li><a href="#case.html">案例</a></li>
+            <li><a href="#partner.html">伙伴</a></li>
+            <li><a href="#about.html">关于</a></li>
+            <li><a href="#contact.html">联系</a></li>
+        </ul>
+        <div class="navbar-right app-none" style=" margin-top: -14px;">
+            <a style="font-size: 13px; text-decoration: none" class="top-tel-pc" href="tel:13071065058">
+                <span style="color:rgba(0,0,0,.5)">售前咨询：</span>&nbsp;13071065058 (7×24h)
             </a>
-            <form class="navbar-right pc-none">
-                <a class="top-tel-phone" href="tel:13071065058"></a>
-            </form>
-        </div>
-        <div class="navbar-collapse collapse navbar-right" style="height: auto;">
-            <!-- Main navigation -->
-            <ul class="nav navbar-nav">
-                <li class="click"><a href="#index.html">首页</a><p class="line-top"></p></li>
-                <li><a href="#service.html">服务</a></li>
-                <li><a href="#case.html">案例</a></li>
-                <li><a href="#partner.html">伙伴</a></li>
-                <li><a href="#about.html">关于</a></li>
-                <li><a href="#contact.html">联系</a></li>
-            </ul>
-            <div class="navbar-right app-none" style=" margin-top: -14px;">
-                <a style="font-size: 13px; text-decoration: none" class="top-tel-pc" href="tel:13071065058">
-                    <span style="color:rgba(0,0,0,.5)">售前咨询：</span>&nbsp;13071065058 (7×24h)
-                </a>
-                <a style="font-size: 13px; text-decoration: none; margin-top: 0px;" class="top-tel-pc-shouhou">
-                    <span style="color: rgba(0,0,0,.5)"> 全国售后： </span>18538580708 (7×24h)
-                </a>
-            </div>
-        </div>
-    </nav>
-    <!--banner start-->
-    <link rel="stylesheet" type="text/css" href="templets/default/banner/css/animate.min.css">
-    <link rel="stylesheet" type="text/css" href="templets/default/banner/css/banner.min.css">
-    <link rel="stylesheet" type="text/css" href="templets/default/banner/css/style.css">
-    <div id="banner" class="banner">
-        <div class="banner-item animated">
-            <div class="banner-img"><div class="carousel-caption p-5">
-                <h2 class="animation-slide-top animation-delay-300" style="color:;">十年专注，网站建设</h2>
-                <p class="animation-slide-bottom animation-delay-500" style="color:">专注于设计体验，专业于解决方案</p>
-          </div></div>
-        </div>
-        <div class="banner-item animated">
-            <div class="banner-img"></div>
-        </div>
-        <div class="banner-item animated">
-            <div class="banner-img"></div>
-        </div>
-        <div class="banner-tool" id="about.html"> </div>
-        <div class="banner-prev"> </div>
-        <div class="banner-next"> </div>
-    </div>
-    <script type="text/javascript" src="templets/default/banner/js/banner.js"></script>
-    <script type="text/javascript">
-        $("#banner").THBanner();
-    </script>
-    <!--banner end-->
-    <!--关于我们-->
-    <div class="container linian-con">
-        <div class="title-comm">
-            <h3 class="welinain">ABOUT US-关于我们</h3>
-            <p class="line"></p>
-            <h2 class="linh45 ab"><span class="f40">历经十三年，</span>我们成为移动互联网开发领域先行者</h2>
-            <p class="linh30 abc">郑州海西网络技术有限公司以高度的战略格局和敏锐的商业嗅觉，专注于为客户提供引领行业的移动互联网软件定制开发服务，</p>
-            <p class="linh30 abc">涵盖APP开发,软件开发,HTML5开发,微信开发,高端网站建设,营销推广等专业服务。</p>
-        </div>
-        <div class="row linian-div-01">
-            <div class="col-lg-3 col-md-3 small-6">
-                <div class="col-div">
-                    <figure class="about-logo-icon"><img src="templets/default/images/about_01.png" onmouseleave="this.src='templets/default/images/about_01.png'" onmouseenter="this.src='templets/default/images/about_01_bg.png'"/></figure>
-                    <h4>超过13年开发经验</h4>
-                </div>
-            </div>
-            <!-- /.col-lg-3 -->
-
-            <div class="col-lg-3 col-md-3 small-6">
-                <div class="col-div">
-                    <figure class="about-logo-icon"><img src="templets/default/images/about_04.png" onmouseleave="this.src='templets/default/images/about_04.png'" onmouseenter="this.src='templets/default/images/about_04_bg.png'"/></figure>
-                    <h4>超过220人开发团队</h4>
-                </div>
-            </div>
-            <!-- /.col-lg-3 -->
-
-            <div class="col-lg-3 col-md-3 small-6">
-                <div class="col-div">
-                    <figure class="about-logo-icon"><img src="templets/default/images/about_02.png" onmouseleave="this.src='templets/default/images/about_02.png'" onmouseenter="this.src='templets/default/images/about_02_bg.png'"/></figure>
-                    <h4>超过850家服务客户</h4>
-                </div>
-            </div>
-            <!-- /.col-lg-3 -->
-
-            <div class="col-lg-3 col-md-3 small-6">
-                <div class="col-div">
-                    <figure class="about-logo-icon"><img src="templets/default/images/about_03.png" onmouseleave="this.src='templets/default/images/about_03.png'" onmouseenter="this.src='templets/default/images/about_03_bg.png'"/></figure>
-                    <h4>超过1500个上线产品</h4>
-                </div>
-            </div>
-            <!-- /.col-lg-3 -->
-
-        </div>
-        <p class="more" id="service.html"><a href="#about.html">了解更多+</a></p>
-    </div>
-    <!--我们的服务-->
-    <div class="services">
-        <div class="title-comm-01">
-            <h3 class="welinain f00">OUR SERVICES-我们的服务</h3>
-            <p class="line-f00"></p>
-        </div>
-        <div class="container">
-            <div class="row linian-div service-ul">
-                <div class="col-lg-3 col-md-3 small-6 service-li">
-                    <div class="col-div-01">
-                        <figure class="about-logo-icon"><img src="templets/default/images/service_08.png"/></figure>
-                        <h4 class="f00">APP开发</h4>
-                    </div>
-                </div>
-                <!-- /.col-lg-3 -->
-
-                <div class="col-lg-3 col-md-3 small-6 service-li">
-                    <div class="col-div-01">
-                        <figure class="about-logo-icon"><img src="templets/default/images/service_01.png"/></figure>
-                        <h4 class="f00">软件开发</h4>
-                    </div>
-                </div>
-                <!-- /.col-lg-3 -->
-
-                <div class="col-lg-3 col-md-3 small-6 service-li">
-                    <div class="col-div-01">
-                        <figure class="about-logo-icon"><img src="templets/default/images/service_02.png"/></figure>
-                        <h4 class="f00">微信开发</h4>
-                    </div>
-                </div>
-                <!-- /.col-lg-3 -->
-
-                <div class="col-lg-3 col-md-3 small-6 service-li">
-                    <div class="col-div-01">
-                        <figure class="about-logo-icon"><img src="templets/default/images/service_03.png"/></figure>
-                        <h4 class="f00">H5开发</h4>
-                    </div>
-                </div>
-                <!-- /.col-lg-3 -->
-
-                <div class="col-lg-3 col-md-3 small-6 service-li">
-                    <div class="col-div-01">
-                        <figure class="about-logo-icon"><img src="templets/default/images/service_04.png"/></figure>
-                        <h4 class="f00">高端网站建设</h4>
-                    </div>
-                </div>
-                <!-- /.col-lg-3 -->
-
-                <div class="col-lg-3 col-md-3 small-6 service-li">
-                    <div class="col-div-01">
-                        <figure class="about-logo-icon"><img src="templets/default/images/service_05.png"/></figure>
-                        <h4 class="f00">数据分析</h4>
-                    </div>
-                </div>
-                <!-- /.col-lg-3 -->
-
-                <div class="col-lg-3 col-md-3 small-6 service-li">
-                    <div class="col-div-01">
-                        <figure class="about-logo-icon"><img src="templets/default/images/service_06.png"/></figure>
-                        <h4 class="f00">营销推广</h4>
-                    </div>
-                </div>
-                <!-- /.col-lg-3 -->
-
-                <div class="col-lg-3 col-md-3 small-6 service-li">
-                    <div class="col-div-01">
-                        <figure class="about-logo-icon"><img src="templets/default/images/service_07.png"/></figure>
-                        <h4 class="f00">风投对接</h4>
-                    </div>
-                </div>
-                <!-- /.col-lg-3 -->
-
-            </div>
-            <p class="more-01" id="case.html"><a href="#service.html">了解更多+</a></p>
+            <a style="font-size: 13px; text-decoration: none; margin-top: 0px;" class="top-tel-pc-shouhou">
+                <span style="color: rgba(0,0,0,.5)"> 全国售后： </span>18538580708 (7×24h)
+            </a>
         </div>
     </div>
-    <!--成功案例-->
-    <div class="case">
-        <div class="title-comm">
-            <h3 class="welinain">CASE WORKS-成功案例</h3>
-            <p class="line"></p>
+</nav>
+<!--banner start-->
+<link rel="stylesheet" type="text/css" href="templets/default/banner/css/animate.min.css">
+<link rel="stylesheet" type="text/css" href="templets/default/banner/css/banner.min.css">
+<link rel="stylesheet" type="text/css" href="templets/default/banner/css/style.css">
+<div id="banner" class="banner">
+    <div class="banner-item animated">
+        <div class="banner-img">
+            <div class="carousel-caption p-5">
+                <h2 class="animation-slide-top animation-delay-300">十年专注，网站建设</h2>
+                <p class="animation-slide-bottom animation-delay-500">专注于设计体验，专业于解决方案</p>
+            </div>
         </div>
-        <div id="JKDiv_0">
-            <section class="CasesList" style="opacity: 1; margin:0; padding:0; padding-top:10px;">
-                <ul style="overflow: hidden;" class="isotope linian-div">
-                    <li class="isotope-item col-lg-3 col-md-3 small-6" style="margin:0; padding:0;">
-                        <div class="CaseImg">
-                            <img src="templets/default/images/anli_04.jpg"/>
-                            <div class="overlayout animated"></div>
-                            <div class="imageText">
-                                <div class="text" style="top: 0px; opacity: 1;">
-                                    <b>中信银行</b>
-                                    <p>微信设计开发</p>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="isotope-item col-lg-3 col-md-3 small-6" style="margin:0; padding:0;">
-                        <div class="CaseImg">
-                            <img src="templets/default/images/newanli-01.jpg"/>
-                            <div class="overlayout animated"></div>
-                            <div class="imageText">
-                                <div class="text" style="top: 0px; opacity: 1;">
-                                    <b>买楼宝</b>
-                                    <p>app设计开发</p>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="isotope-item col-lg-3 col-md-3 small-6" style="margin:0; padding:0;">
-                        <div class="CaseImg">
-                            <img src="templets/default/images/newanli-02.png"/>
-                            <div class="overlayout animated"></div>
-                            <div class="imageText">
-                                <div class="text" style="top: 0px; opacity: 1;">
-                                    <b>随叫随到</b>
-                                    <p>app设计开发</p>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="isotope-item col-lg-3 col-md-3 small-6" style="margin:0; padding:0;">
-                        <div class="CaseImg">
-                            <img src="templets/default/images/newanli-13.jpg"/>
-                            <div class="overlayout animated"></div>
-                            <div class="imageText">
-                                <div class="text" style="top: 0px; opacity: 1;">
-                                    <b>思卓私房课</b>
-                                    <p>app设计开发</p>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="isotope-item col-lg-3 col-md-3 small-6" style="margin:0; padding:0;">
-                        <div class="CaseImg">
-                            <img src="templets/default/images/newanli-05.jpg"/>
-                            <div class="overlayout animated"></div>
-                            <div class="imageText">
-                                <div class="text" style="top: 0px; opacity: 1;">
-                                    <b>云飞科技</b>
-                                    <p>网站设计开发</p>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="isotope-item col-lg-3 col-md-3 small-6" style="margin:0; padding:0;">
-                        <div class="CaseImg">
-                            <img src="templets/default/images/newanli-06.png"/>
-                            <div class="overlayout animated"></div>
-                            <div class="imageText">
-                                <div class="text" style="top: 0px; opacity: 1;">
-                                    <b>好家教</b>
-                                    <p>app设计开发</p>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="isotope-item col-lg-3 col-md-3 small-6" style="margin:0; padding:0;">
-                        <div class="CaseImg">
-                            <img src="templets/default/images/newanli-07.png"/>
-                            <div class="overlayout animated"></div>
-                            <div class="imageText">
-                                <div class="text" style="top: 0px; opacity: 1;">
-                                    <b>工具猫</b>
-                                    <p>app设计开发</p>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="isotope-item col-lg-3 col-md-3 small-6" style="margin:0; padding:0;">
-                        <div class="CaseImg">
-                            <img src="templets/default/images/newanli-08.jpg"/>
-                            <div class="overlayout animated"></div>
-                            <div class="imageText">
-                                <div class="text" style="top: 0px; opacity: 1;">
-                                    <b>爱点APP</b>
-                                    <p>app设计开发</p>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="isotope-item col-lg-3 col-md-3 small-6" style="margin:0; padding:0;">
-                        <div class="CaseImg">
-                            <img src="templets/default/images/newanli-09.jpg"/>
-                            <div class="overlayout animated"></div>
-                            <div class="imageText">
-                                <div class="text" style="top: 0px; opacity: 1;">
-                                    <b>胎联盟</b>
-                                    <p>app设计开发</p>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="isotope-item col-lg-3 col-md-3 small-6" style="margin:0; padding:0;">
-                        <div class="CaseImg">
-                            <img src="templets/default/images/newanli-10.jpg"/>
-                            <div class="overlayout animated"></div>
-                            <div class="imageText">
-                                <div class="text" style="top: 0px; opacity: 1;">
-                                    <b>康尔电子烟</b>
-                                    <p>APP设计开发</p>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="isotope-item col-lg-3 col-md-3 small-6" style="margin:0; padding:0;">
-                        <div class="CaseImg">
-                            <img src="templets/default/images/newanli-11.jpg"/>
-                            <div class="overlayout animated"></div>
-                            <div class="imageText">
-                                <div class="text" style="top: 0px; opacity: 1;">
-                                    <b>脏了么</b>
-                                    <p>APP设计开发</p>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="isotope-item col-lg-3 col-md-3 small-6" style="margin:0; padding:0;">
-                        <div class="CaseImg">
-                            <img src="templets/default/images/newanli-12.png"/>
-                            <div class="overlayout animated"></div>
-                            <div class="imageText">
-                                <div class="text" style="top: 0px; opacity: 1;">
-                                    <b>唐宋元明</b>
-                                    <p>APP设计开发</p>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-
-                    <li class="isotope-item col-lg-3 col-md-3 small-6" style="margin:0; padding:0;">
-                        <div class="CaseImg">
-                            <img src="templets/default/images/newanli-04.jpg"/>
-                            <div class="overlayout animated"></div>
-                            <div class="imageText">
-                                <div class="text" style="top: 0px; opacity: 1;">
-                                    <b>音乐无界</b>
-                                    <p>APP设计开发</p>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-
-                    <li class="isotope-item col-lg-3 col-md-3 small-6" style="margin:0; padding:0;">
-                        <div class="CaseImg">
-                            <img src="templets/default/images/newanli-14.jpg"/>
-                            <div class="overlayout animated"></div>
-                            <div class="imageText">
-                                <div class="text" style="top: 0px; opacity: 1;">
-                                    <b>连众招商</b>
-                                    <p>APP设计开发</p>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-
-
-                    <li class="isotope-item col-lg-3 col-md-3 small-6" style="margin:0; padding:0;">
-                        <div class="CaseImg">
-                            <img src="templets/default/images/newanli-15.jpg"/>
-                            <div class="overlayout animated"></div>
-                            <div class="imageText">
-                                <div class="text" style="top: 0px; opacity: 1;">
-                                    <b>两岸易购</b>
-                                    <p>APP设计开发</p>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-
-
-                    <li class="isotope-item col-lg-3 col-md-3 small-6" style="margin:0; padding:0;">
-                        <div class="CaseImg">
-                            <img src="templets/default/images/newanli-16.jpg"/>
-                            <div class="overlayout animated"></div>
-                            <div class="imageText">
-                                <div class="text" style="top: 0px; opacity: 1;">
-                                    <b>新兼职</b>
-                                    <p>APP设计开发</p>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-
-
-                    <li class="isotope-item col-lg-3 col-md-3 small-6" style="margin:0; padding:0;">
-                        <div class="CaseImg">
-                            <img src="templets/default/images/newanli-17.jpg"/>
-                            <div class="overlayout animated"></div>
-                            <div class="imageText">
-                                <div class="text" style="top: 0px; opacity: 1;">
-                                    <b>保驾护航</b>
-                                    <p>APP设计开发</p>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-
-
-                    <li class="isotope-item col-lg-3 col-md-3 small-6" style="margin:0; padding:0;">
-                        <div class="CaseImg">
-                            <img src="templets/default/images/newanli-18.jpg"/>
-                            <div class="overlayout animated"></div>
-                            <div class="imageText">
-                                <div class="text" style="top: 0px; opacity: 1;">
-                                    <b>城来成网</b>
-                                    <p>APP设计开发</p>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-
-
-                    <li class="isotope-item col-lg-3 col-md-3 small-6" style="margin:0; padding:0;">
-                        <div class="CaseImg">
-                            <img src="templets/default/images/newanli-19.jpg"/>
-                            <div class="overlayout animated"></div>
-                            <div class="imageText">
-                                <div class="text" style="top: 0px; opacity: 1;">
-                                    <b>易快融</b>
-                                    <p>APP设计开发</p>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-
-
-
-                    <li class="isotope-item col-lg-3 col-md-3 small-6" style="margin:0; padding:0;">
-                        <div class="CaseImg">
-                            <img src="templets/default/images/newanli-20.jpg"/>
-                            <div class="overlayout animated"></div>
-                            <div class="imageText">
-                                <div class="text" style="top: 0px; opacity: 1;">
-                                    <b>装修管家</b>
-                                    <p>APP设计开发</p>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </section>
-        </div>
-        <p class="more" id="partner.html"><a href="#case.html">了解更多+</a></p>
     </div>
-    <!--成功案例结束-->
+    <div class="banner-item animated">
+        <div class="banner-img"></div>
+    </div>
+    <div class="banner-item animated">
+        <div class="banner-img"></div>
+    </div>
+    <div class="banner-tool" id="about.html"></div>
+    <div class="banner-prev"></div>
+    <div class="banner-next"></div>
+</div>
+<script type="text/javascript" src="templets/default/banner/js/banner.js"></script>
+<script type="text/javascript">
+    $("#banner").THBanner();
+</script>
+<!--banner end-->
+<!--关于我们-->
+<div class="container linian-con">
+    <div class="title-comm">
+        <h3 class="welinain">ABOUT US-关于我们</h3>
+        <p class="line"></p>
+        <h2 class="linh45 ab"><span class="f40">历经十三年，</span>我们成为移动互联网开发领域先行者</h2>
+        <p class="linh30 abc">郑州海西网络技术有限公司以高度的战略格局和敏锐的商业嗅觉，专注于为客户提供引领行业的移动互联网软件定制开发服务，</p>
+        <p class="linh30 abc">涵盖APP开发,软件开发,HTML5开发,微信开发,高端网站建设,营销推广等专业服务。</p>
+    </div>
+    <div class="row linian-div-01">
+        <div class="col-lg-3 col-md-3 small-6">
+            <div class="col-div">
+                <figure class="about-logo-icon"><img src="templets/default/images/about_01.png"
+                                                     onmouseleave="this.src='templets/default/images/about_01.png'"
+                                                     onmouseenter="this.src='templets/default/images/about_01_bg.png'"/>
+                </figure>
+                <h4>超过13年开发经验</h4>
+            </div>
+        </div>
+        <!-- /.col-lg-3 -->
 
-    <div class="index-line"></div>
+        <div class="col-lg-3 col-md-3 small-6">
+            <div class="col-div">
+                <figure class="about-logo-icon"><img src="templets/default/images/about_04.png"
+                                                     onmouseleave="this.src='templets/default/images/about_04.png'"
+                                                     onmouseenter="this.src='templets/default/images/about_04_bg.png'"/>
+                </figure>
+                <h4>超过220人开发团队</h4>
+            </div>
+        </div>
+        <!-- /.col-lg-3 -->
 
-    <!--项目管理-->
-    <!-- <div class="app-project-management pc-none"><img src="templets/default/images/project_bg.jpg"/></div>
-    <div class="pc-project-management app-none"></div> -->
+        <div class="col-lg-3 col-md-3 small-6">
+            <div class="col-div">
+                <figure class="about-logo-icon"><img src="templets/default/images/about_02.png"
+                                                     onmouseleave="this.src='templets/default/images/about_02.png'"
+                                                     onmouseenter="this.src='templets/default/images/about_02_bg.png'"/>
+                </figure>
+                <h4>超过850家服务客户</h4>
+            </div>
+        </div>
+        <!-- /.col-lg-3 -->
 
-    <!--合作伙伴-->
+        <div class="col-lg-3 col-md-3 small-6">
+            <div class="col-div">
+                <figure class="about-logo-icon"><img src="templets/default/images/about_03.png"
+                                                     onmouseleave="this.src='templets/default/images/about_03.png'"
+                                                     onmouseenter="this.src='templets/default/images/about_03_bg.png'"/>
+                </figure>
+                <h4>超过1500个上线产品</h4>
+            </div>
+        </div>
+        <!-- /.col-lg-3 -->
+
+    </div>
+    <p class="more" id="service.html"><a href="#about.html">了解更多+</a></p>
+</div>
+<!--我们的服务-->
+<div class="services">
+    <div class="title-comm-01">
+        <h3 class="welinain f00">OUR SERVICES-我们的服务</h3>
+        <p class="line-f00"></p>
+    </div>
     <div class="container">
-        <div class="title-comm">
-            <h3 class="welinain">COOPERATIVE PARTNER-合作伙伴</h3>
-            <p class="line"></p>
+        <div class="row linian-div service-ul">
+            <div class="col-lg-3 col-md-3 small-6 service-li">
+                <div class="col-div-01">
+                    <figure class="about-logo-icon"><img src="templets/default/images/service_08.png"/></figure>
+                    <h4 class="f00">APP开发</h4>
+                </div>
+            </div>
+            <!-- /.col-lg-3 -->
+
+            <div class="col-lg-3 col-md-3 small-6 service-li">
+                <div class="col-div-01">
+                    <figure class="about-logo-icon"><img src="templets/default/images/service_01.png"/></figure>
+                    <h4 class="f00">软件开发</h4>
+                </div>
+            </div>
+            <!-- /.col-lg-3 -->
+
+            <div class="col-lg-3 col-md-3 small-6 service-li">
+                <div class="col-div-01">
+                    <figure class="about-logo-icon"><img src="templets/default/images/service_02.png"/></figure>
+                    <h4 class="f00">微信开发</h4>
+                </div>
+            </div>
+            <!-- /.col-lg-3 -->
+
+            <div class="col-lg-3 col-md-3 small-6 service-li">
+                <div class="col-div-01">
+                    <figure class="about-logo-icon"><img src="templets/default/images/service_03.png"/></figure>
+                    <h4 class="f00">H5开发</h4>
+                </div>
+            </div>
+            <!-- /.col-lg-3 -->
+
+            <div class="col-lg-3 col-md-3 small-6 service-li">
+                <div class="col-div-01">
+                    <figure class="about-logo-icon"><img src="templets/default/images/service_04.png"/></figure>
+                    <h4 class="f00">高端网站建设</h4>
+                </div>
+            </div>
+            <!-- /.col-lg-3 -->
+
+            <div class="col-lg-3 col-md-3 small-6 service-li">
+                <div class="col-div-01">
+                    <figure class="about-logo-icon"><img src="templets/default/images/service_05.png"/></figure>
+                    <h4 class="f00">数据分析</h4>
+                </div>
+            </div>
+            <!-- /.col-lg-3 -->
+
+            <div class="col-lg-3 col-md-3 small-6 service-li">
+                <div class="col-div-01">
+                    <figure class="about-logo-icon"><img src="templets/default/images/service_06.png"/></figure>
+                    <h4 class="f00">营销推广</h4>
+                </div>
+            </div>
+            <!-- /.col-lg-3 -->
+
+            <div class="col-lg-3 col-md-3 small-6 service-li">
+                <div class="col-div-01">
+                    <figure class="about-logo-icon"><img src="templets/default/images/service_07.png"/></figure>
+                    <h4 class="f00">风投对接</h4>
+                </div>
+            </div>
+            <!-- /.col-lg-3 -->
+
         </div>
-        <div class="row linian-div">
-            <ul id="JKDiv02_0" class="customer_logo clearfloat">
-                <li class="col-lg-2 col-md-2 small-6">
-                    <span></span><img src="templets/default/images/cus_01_pre.jpg"/>
-                    <p></p>
+        <p class="more-01" id="case.html"><a href="#service.html">了解更多+</a></p>
+    </div>
+</div>
+<!--成功案例-->
+<div class="case">
+    <div class="title-comm">
+        <h3 class="welinain">CASE WORKS-成功案例</h3>
+        <p class="line"></p>
+    </div>
+    <div id="JKDiv_0">
+        <section class="CasesList" style="opacity: 1; margin:0; padding:0; padding-top:10px;">
+            <ul style="overflow: hidden;" class="isotope linian-div">
+                <li class="isotope-item col-lg-3 col-md-3 small-6" style="margin:0; padding:0;">
+                    <div class="CaseImg">
+                        <img src="templets/default/images/newanli-09.jpg"/>
+                        <div class="overlayout animated"></div>
+                        <div class="imageText">
+                            <div class="text" style="top: 0px; opacity: 1;">
+                                <b>胎联盟</b>
+                                <p>app设计开发</p>
+                            </div>
+                        </div>
+                    </div>
                 </li>
-                <li class="col-lg-2 col-md-2 small-6">
-                    <span></span><img src="templets/default/images/cus_02_pre.jpg"/>
-                    <p></p>
+                <li class="isotope-item col-lg-3 col-md-3 small-6" style="margin:0; padding:0;">
+                    <div class="CaseImg">
+                        <img src="templets/default/images/newanli-10.jpg"/>
+                        <div class="overlayout animated"></div>
+                        <div class="imageText">
+                            <div class="text" style="top: 0px; opacity: 1;">
+                                <b>康尔电子烟</b>
+                                <p>APP设计开发</p>
+                            </div>
+                        </div>
+                    </div>
                 </li>
-                <li class="col-lg-2 col-md-2 small-6">
-                    <span></span><img src="templets/default/images/cus_03_pre.jpg"/>
-                    <p></p>
+                <li class="isotope-item col-lg-3 col-md-3 small-6" style="margin:0; padding:0;">
+                    <div class="CaseImg">
+                        <img src="templets/default/images/newanli-11.jpg"/>
+                        <div class="overlayout animated"></div>
+                        <div class="imageText">
+                            <div class="text" style="top: 0px; opacity: 1;">
+                                <b>脏了么</b>
+                                <p>APP设计开发</p>
+                            </div>
+                        </div>
+                    </div>
                 </li>
-                <li class="col-lg-2 col-md-2 small-6">
-                    <span></span><img src="templets/default/images/cus_04_pre.jpg"/>
-                    <p></p>
+                <li class="isotope-item col-lg-3 col-md-3 small-6" style="margin:0; padding:0;">
+                    <div class="CaseImg">
+                        <img src="templets/default/images/newanli-12.png"/>
+                        <div class="overlayout animated"></div>
+                        <div class="imageText">
+                            <div class="text" style="top: 0px; opacity: 1;">
+                                <b>唐宋元明</b>
+                                <p>APP设计开发</p>
+                            </div>
+                        </div>
+                    </div>
                 </li>
-                <li class="col-lg-2 col-md-2 small-6">
-                    <span></span><img src="templets/default/images/cus_05_pre.jpg"/>
-                    <p></p>
+
+                <li class="isotope-item col-lg-3 col-md-3 small-6" style="margin:0; padding:0;">
+                    <div class="CaseImg">
+                        <img src="templets/default/images/newanli-04.jpg"/>
+                        <div class="overlayout animated"></div>
+                        <div class="imageText">
+                            <div class="text" style="top: 0px; opacity: 1;">
+                                <b>音乐无界</b>
+                                <p>APP设计开发</p>
+                            </div>
+                        </div>
+                    </div>
                 </li>
-                <li class="col-lg-2 col-md-2 small-6">
-                    <span></span><img src="templets/default/images/cus_06_pre.jpg"/>
-                    <p></p>
+
+                <li class="isotope-item col-lg-3 col-md-3 small-6" style="margin:0; padding:0;">
+                    <div class="CaseImg">
+                        <img src="templets/default/images/newanli-14.jpg"/>
+                        <div class="overlayout animated"></div>
+                        <div class="imageText">
+                            <div class="text" style="top: 0px; opacity: 1;">
+                                <b>连众招商</b>
+                                <p>APP设计开发</p>
+                            </div>
+                        </div>
+                    </div>
                 </li>
-                <li class="col-lg-2 col-md-2 small-6">
-                    <span></span><img src="templets/default/images/cus_07_pre.jpg"/>
-                    <p></p>
+
+
+                <li class="isotope-item col-lg-3 col-md-3 small-6" style="margin:0; padding:0;">
+                    <div class="CaseImg">
+                        <img src="templets/default/images/newanli-15.jpg"/>
+                        <div class="overlayout animated"></div>
+                        <div class="imageText">
+                            <div class="text" style="top: 0px; opacity: 1;">
+                                <b>两岸易购</b>
+                                <p>APP设计开发</p>
+                            </div>
+                        </div>
+                    </div>
                 </li>
-                <li class="col-lg-2 col-md-2 small-6">
-                    <span></span><img src="templets/default/images/cus_08_pre.jpg"/>
-                    <p></p>
+
+
+                <li class="isotope-item col-lg-3 col-md-3 small-6" style="margin:0; padding:0;">
+                    <div class="CaseImg">
+                        <img src="templets/default/images/newanli-16.jpg"/>
+                        <div class="overlayout animated"></div>
+                        <div class="imageText">
+                            <div class="text" style="top: 0px; opacity: 1;">
+                                <b>新兼职</b>
+                                <p>APP设计开发</p>
+                            </div>
+                        </div>
+                    </div>
                 </li>
-                <li class="col-lg-2 col-md-2 small-6">
-                    <span></span><img src="templets/default/images/cus_09_pre.jpg"/>
-                    <p></p>
+
+
+                <li class="isotope-item col-lg-3 col-md-3 small-6" style="margin:0; padding:0;">
+                    <div class="CaseImg">
+                        <img src="templets/default/images/newanli-17.jpg"/>
+                        <div class="overlayout animated"></div>
+                        <div class="imageText">
+                            <div class="text" style="top: 0px; opacity: 1;">
+                                <b>保驾护航</b>
+                                <p>APP设计开发</p>
+                            </div>
+                        </div>
+                    </div>
                 </li>
-                <li class="col-lg-2 col-md-2 small-6">
-                    <span></span><img src="templets/default/images/cus_10_pre.jpg"/>
-                    <p></p>
+
+
+                <li class="isotope-item col-lg-3 col-md-3 small-6" style="margin:0; padding:0;">
+                    <div class="CaseImg">
+                        <img src="templets/default/images/newanli-18.jpg"/>
+                        <div class="overlayout animated"></div>
+                        <div class="imageText">
+                            <div class="text" style="top: 0px; opacity: 1;">
+                                <b>城来成网</b>
+                                <p>APP设计开发</p>
+                            </div>
+                        </div>
+                    </div>
                 </li>
-                <li class="col-lg-2 col-md-2 small-6">
-                    <span></span><img src="templets/default/images/cus_11_pre.jpg"/>
-                    <p></p>
+
+
+                <li class="isotope-item col-lg-3 col-md-3 small-6" style="margin:0; padding:0;">
+                    <div class="CaseImg">
+                        <img src="templets/default/images/newanli-19.jpg"/>
+                        <div class="overlayout animated"></div>
+                        <div class="imageText">
+                            <div class="text" style="top: 0px; opacity: 1;">
+                                <b>易快融</b>
+                                <p>APP设计开发</p>
+                            </div>
+                        </div>
+                    </div>
                 </li>
-                <li class="col-lg-2 col-md-2 small-6">
-                    <span></span><img src="templets/default/images/cus_12_pre.jpg"/>
-                    <p></p>
-                </li>
-                <li class="col-lg-2 col-md-2 small-6">
-                    <span></span><img src="templets/default/images/cus_13_pre.jpg"/>
-                    <p></p>
-                </li>
-                <li class="col-lg-2 col-md-2 small-6">
-                    <span></span><img src="templets/default/images/cus_14_pre.jpg"/>
-                    <p></p>
-                </li>
-                <li class="col-lg-2 col-md-2 small-6">
-                    <span></span><img src="templets/default/images/cus_15_pre.jpg"/>
-                    <p></p>
-                </li>
-                <li class="col-lg-2 col-md-2 small-6">
-                    <span></span><img src="templets/default/images/cus_16_pre.jpg"/>
-                    <p></p>
-                </li>
-                <li class="col-lg-2 col-md-2 small-6">
-                    <span></span><img src="templets/default/images/cus_17_pre.jpg"/>
-                    <p></p>
-                </li>
-                <li class="col-lg-2 col-md-2 small-6">
-                    <span></span><img src="templets/default/images/cus_18_pre.jpg"/>
-                    <p></p>
+
+
+                <li class="isotope-item col-lg-3 col-md-3 small-6" style="margin:0; padding:0;">
+                    <div class="CaseImg">
+                        <img src="templets/default/images/newanli-20.jpg"/>
+                        <div class="overlayout animated"></div>
+                        <div class="imageText">
+                            <div class="text" style="top: 0px; opacity: 1;">
+                                <b>装修管家</b>
+                                <p>APP设计开发</p>
+                            </div>
+                        </div>
+                    </div>
                 </li>
             </ul>
-        </div>
-        <p class="more"><a href="#partner.html">了解更多+</a></p>
+        </section>
     </div>
-    <!-- 项目需求 -->
-    <!-- <div class="section5">
-        <div class="wrap">
-            <h2>填写您的项目需求给我们。</h2>
-            <div class="write clearfix">
-                <input name="name" placeholder="称呼姓名" value="" class="text1" id="name" type="text" maxlength="10">
-                <input name="mobile" placeholder="联系电话" value="" class="text2" id="mobile" type="text" maxlength="11">
-                <input name="content" placeholder="描述您的需求，如APP开发、微信开发、网站建设等。" id="content" value="" class="text3" type="text" maxlength="300">
-                <input name="submit" value="提交项目需求" class="submit" id="submit" rel="" type="submit" onclick="return GoInput()">
-            </div>
-            <b>*请认真填写需求信息，我们会在24小时内与您取得联系。</b>
-        </div>
-    </div> -->
+    <p class="more" id="partner.html"><a href="#case.html">了解更多+</a></p>
+</div>
+<!--成功案例结束-->
 
-    <!-- footer部分 -->
-    <div class="footer" id="contact.html">
-        <div class="wrap clearfix">
-            <div class="left">
-                <h2>联系我们</h2>
-                <h3>地址：郑州市大学科技园东区7号楼2层5号</h3>
-                <h3>售前：13071065058（早8:00-晚8:00）</h3>
-                <h3>售后：18538580708（7*24小时）</h3>
-                <h3>QQ  :  420466541</h3>
-                <h3>欢迎您来电咨询，我们将竭诚为您服务。</h3>
-            </div>
-            <div class="right">
-                <h2>使命及未来</h2>
-                <p>
-                    我们秉承求实创新、不断超越的发展理念，愿帮助更多优秀企业及创业者实现移动互联网梦想，成为中国最具价值的移动互联网软件服务商。我们对移动互联网的未来充满信心，肩负实现中国企业互联网+转型升级的伟大使命，路虽坎坷，我们坚信目标必定达成。 未来属于强者，属于具有战略眼光的人，我们将和众多服务客户及合作伙伴共同成长，一起见证中国移动互联网的伟大变革。
-                </p>
-            </div>
-            <div class="copyright">
-                <p>COPYRIGHT (c) 2004-2019 海西网络 版权所有 All RIGHTS RESERVED</p>
-                <p><a href="http://www.miitbeian.gov.cn/" target="_blank">豫ICP备14004382号-1</a></p>
-            </div>
-        </div>
+<!--项目管理-->
+<!-- <div class="app-project-management pc-none"><img src="templets/default/images/project_bg.jpg"/></div>
+<div class="pc-project-management app-none"></div> -->
+
+<!--合作伙伴-->
+<div class="container">
+    <div class="title-comm">
+        <h3 class="welinain">COOPERATIVE PARTNER-合作伙伴</h3>
+        <p class="line"></p>
     </div>
-    <style type="text/css">
-        .bg-div {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,.5);
-            z-index: 50;
-        }
-
-        .body-static {
-            overflow: hidden !important;
-        }
-
-        .bg-div.hide {
-            display: none;
-        }
-    </style>
-    <div class="bg-div hide"> </div>
-    <!--底部蒙层end-->
-    <script type="text/javascript">
-        $(function () {
-            $(".navbar-toggle").click(function () {
-                $(this).toggleClass("click");
-                $(".bg-div").toggleClass("hide");
-                $("body").toggleClass("body-static");
-                $(".navbar-form a").toggleClass("active");
-                $(".navbar-collapse").slideToggle();
-            });
-            $(".bg-div").click(function () {
-                $(".navbar-toggle").trigger("click");
-            });
-
-            var top = ($(window).height() - $(".modal-content").height()) / 2;
-            $(".model-down").click(function () {
-                $(".modal-content").css({ position: 'absolute', 'top': top });
-            });
-            $(".model-down-1").click(function () {
-                $(".modal-content").css({ position: 'absolute', 'top': top });
-            });
-
-            $(".weixin-logo-icon").mouseleave(function () {
-                $(this).prev().find(".popover").removeClass("hover");
-            }).mouseenter(function () {
-                $(this).prev().find(".popover").addClass("hover");
-            });
-            $(".shouji-logo-icon").mouseleave(function () {
-                $(this).prev().find(".popover").removeClass("hover");
-            }).mouseenter(function () {
-                $(this).prev().find(".popover").addClass("hover");
-            });
-
-            var navAgent = navigator.userAgent.toLowerCase();
-            if (navAgent.indexOf("thjk-app-ios") > -1 || navAgent.indexOf("thdoctor-app-ios") > -1 || navAgent.indexOf("thjk-app-android") > -1 || navAgent.indexOf("thdoctor-app-android") > -1) {
-                $(".navbar-form.navbar-right").hide();
-                $(".nav > li:last-child a").css({ "border-bottom": "0" });
-            }
-
-            //$(".navbar-nav > li.click a").removeAttr("href");
-        });
-    </script>
-    <link href="templets/default/skrollr/theme-cobalt.css" rel="stylesheet" type="text/css" media="all">
-    <script src="templets/default/skrollr/jquery.plugin.min.js"></script>
-    <script src="templets/default/skrollr/jquery.flexslider-min.js"></script>
-    <script src="templets/default/skrollr/smooth-scroll.min.js"></script>
-    <script src="templets/default/skrollr/skrollr.min.js"></script>
-    <script src="templets/default/skrollr/spectragram.min.js"></script>
-    <script src="templets/default/skrollr/scrollReveal.min.js"></script>
-    <script src="templets/default/skrollr/isotope.min.js"></script>
-    <script src="templets/default/skrollr/lightbox.min.js"></script>
-    <script src="templets/default/skrollr/scripts.js"></script>
-    <script type="text/javascript">
-        $(function () {
-            //$(".navbar-nav > li:nth-child(1)").addClass("click").append($('<p class="line-top"></p>')).find("a").removeAttr("href");
-        });
-
-    </script>
-    <script type="text/javascript" src="templets/default/javascript/bootstrap.min.js"></script>
-    <div id="top"></div>
-    <script type="text/javascript" src="templets/default/javascript/top.js"></script>
-    <style type="text/css">
-        /*QQ浮窗*/
-        .qqkefu {
-            width: 160px;
-            position: fixed;
-            z-index: 100;
-            right: 0;
-            top: 200px;
-            transition: all .5s ease 0s;
-        }
-
-        .qqkefu.qqkefu-nome {
-            right: -130px;
-        }
-
-        .qqkefu.qqkefu-nome .qqkefu-left {
-            background-position: 0 0;
-        }
-
-        .qqkefu-left {
-            width: 35px;
-            *width: 30px;
-            height: 130px;
-            float: left;
-            margin-top: 40px;
-            background: url(templets/default/images/qqkefu.png) no-repeat -30px 0 #4c89d7;
-            cursor: pointer;
-            border-radius: 5px 0 0 5px;
-            overflow: hidden;
-        }
-
-        .rides-cs .floatL {
-            width: 30px;
-            float: left;
-            position: relative;
-            z-index: 1;
-            border-radius: 5px 0 0 5px;
-            overflow: hidden;
-        }
-
-        .qqkefu-right {
-            background: #4c89d7;
-            width: 125px;
-            float: right;
-            border-radius: 5px 0 0 5px;
-            padding: 5px 0 5px 5px;
-        }
-
-        .qqkefu-right-box {
-            background: #fff;
-            border-radius: 5px 0 0 5px;
-        }
-
-        .qqkefu-right-box ul {
-            margin: 0px;
-            list-style: none inside;
-            padding: 0px;
-        }
-
-        .qqkefu-right-box li {
-            height: 39px;
-            line-height: 39px;
-            border-bottom: 1px solid #e9e9e9;
-            padding: 0 0 0 15px;
-            margin: 0px;
-            font-size: 12px;
-            font-family: "Microsoft YaHei", "微软雅黑";
-        }
-
-        .qqkefu-right-box li.title {
-            color: #bbbbbb;
-            font-size: 14px;
-        }
-
-        .qqkefu-right-box li.title a {
-            color: #333333;
-            font-size: 12px;
-        }
-
-        .qqkefu-right-box li.title a:hover {
-            color: #4c89d7;
-            font-size: 12px;
-        }
-
-        .qqkefu-right-box li.title span {
-            color: #333333;
-            font-size: 12px;
-        }
-
-        .qqkefu-right-box li.second-last {
-            color: #333333;
-            font-size: 14px;
-        }
-
-        .qqkefu-right-box li.last {
-            border-bottom: none;
-            color: #333333;
-            font-size: 14px;
-        }
-
-        .qqkefu-right-box li i {
-            margin-right: 10px;
-        }
-
-        .qqkefu-right-box li i.ico-qq {
-            background: url(templets/default/images/qqkefu.png) no-repeat 0 -260px;
-            width: 15px;
-            height: 16px;
-            display: inline-block;
-            vertical-align: middle;
-        }
-
-        @media only screen and (max-width: 479px) {
-            #qqkefu {
-                display: none;
-            }
-
-            .izl-rmenu {
-                right: 10px;
-                bottom: 60px;
-            }
-        }
-        /* 移动端底部客服 */
-        .footer_front {
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            top: 0px;
-            left: 0px;
-            z-index: 888;
-            transform-origin: 0px 0px 0px;
-            opacity: 1;
-            transform: scale(1, 1);
-            display: none;
-        }
-
-        #menu {
-            position: fixed;
-            bottom: 0px;
-            width: 100%;
-            height: 50px;
-            line-height: 44px;
-            z-index: 999;
-        }
-
-        #menu ul {
-            margin: 0 auto;
-            list-style-type: none;
-            width: 100%;
-            max-width: 500px;
-            height: 100%;
-            padding: 0px;
-        }
-
-        #menu ul li {
-            float: left;
-            width: 50%;
-            height: 100%;
-            text-align: center;
-            position: relative;
-            font-size: 14px;
-        }
-
-        #menu ul li .line {
-            position: absolute;
-            top: 0px;
-            right: 0px;
-            z-index: 30;
-            width: 1px;
-        }
-
-        #menu ul li .menu_li {
-            position: absolute;
-            top: 7px;
-            left: 5%;
-            z-index: 40;
-            width: 90%;
-            height: 36px;
-            line-height: 36px;
-            color: #fff;
-            border-radius: 3px;
-        }
-
-        #menu .phone_bottom_menu {
-            color: #fff;
-            text-decoration: blink;
-            width: 100%;
-            height: 100%;
-            display: block;
-        }
-
-        #menu ul li:nth-of-type(1) .menu_li {
-            background-color: #7fbcf3;
-        }
-
-        #menu ul li:nth-of-type(2) .menu_li {
-            background-color: #f4b10e;
-        }
-
-        #menu ul li:nth-of-type(3) .menu_li {
-            background-color: #f94a45;
-        }
-
-        #menu ul li .img_front {
-            position: absolute;
-            top: 0px;
-            left: 0px;
-            z-index: 30;
-            width: 100%;
-            height: 100%;
-            background-color: #000;
-            opacity: .65;
-        }
-
-        #menu ul li .img_front img {
-            width: 100%;
-            height: 100%;
-        }
-
-        #menu ul li span {
-            position: absolute;
-            bottom: -300px;
-            left: 50%;
-            width: 104px;
-            margin-left: -52px;
-            height: auto;
-            text-align: center;
-            z-index: 10;
-        }
-
-        #menu ul li span a {
-            display: block;
-            float: left;
-            width: 100%;
-            height: 43px;
-            line-height: 43px;
-            color: #454545;
-            text-decoration: none;
-            text-align: center;
-        }
-
-        #menu ul li .menu_li .icon {
-            width: 1.8em;
-            margin-right: 0.5em;
-            display: inline-block;
-            vertical-align: top;
-        }
-
-        #menu ul li .menu_li .icon.icon-phone {
-            width: 2em;
-        }
-    </style>
-    <!-- 在线客服 -->
-    <div id="qqkefu" class="qqkefu">
-        <div class="qqkefu-left"></div>
-        <div class="qqkefu-right">
-            <div class="qqkefu-right-box">
-                <ul>
-                    <li class="title">7×24h在线客服</li>
-                    <li><i class="ico-qq"></i><a href="tencent://message/?Menu=yes&amp;uin=420466541&amp;Site=联系我们&amp;Service=200&amp;sigT=2a0e37386280486ada2b5d5e69ee49186ccae1257fd9e1c9598af1f0b9c916067002a57aaaec8c8d" target="_parent">客服1</a></li>
-  
-                    <li><i class="ico-qq"></i><a href="tencent://message/?Menu=yes&amp;uin=420466541&amp;Site=联系我们&amp;Service=200&amp;sigT=2a0e37386280486ada2b5d5e69ee49186ccae1257fd9e1c9598af1f0b9c916067002a57aaaec8c8d" target="_parent">客服2</a></li>
-                    <li class="title">7×24h咨询热线</li>
-                    <li class="second-last">13071065058</li>
-                    <li class="title last">18538580708</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <!--底部咨询-->
-    <div id="menu" style="display: none;">
-        <ul>
-            <!-- <li class="query_btn"> <img class="img_front" src="templets/default/images/front.png">
-              <div class="menu_li"> <i class="icon icon-search"></i> &nbsp;免费咨询 </div>
-              <span style="background-size: 100% auto; display: none; bottom: 0px;"> </span> </li> -->
-            <li>
-                <img class="img_front" src="templets/default/images/front.png">
-                <div class="menu_li"> <a class="phone_bottom_menu" href="tel:13071065058"> <i class="icon icon-phone"><img src="templets/default/images/icon-tel.png"></i>免费通话 </a> </div>
+    <div class="row linian-div">
+        <ul id="JKDiv02_0" class="customer_logo clearfloat">
+            <li class="col-lg-2 col-md-2 small-6">
+                <span></span><img src="templets/default/images/cus_01_pre.jpg"/>
+                <p></p>
             </li>
-            <li class="online_newqq">
-                <img class="img_front" src="templets/default/images/front.png">
-                <div class="menu_li"> <i class="icon icon-qq"><img src="templets/default/images/icon-qq.png"></i>在线咨询 </div>
-                <span style="background-size: 100% auto; bottom: 0px;" class="wap_app_qq">
-                    <img src="templets/default/images/navbg3.png" width="100%">
-                    <div class="wap_app_qq" style="position:absolute;top:0px;left:0px;width: 100%;"> <a href="http://wpa.qq.com/msgrd?v=3&amp;uin=420466541&amp;site=qq&amp;menu=yes">客服1</a> <a href="http://wpa.qq.com/msgrd?v=3&amp;uin=420466541&amp;site=qq&amp;menu=yes">客服2</a> </div>
-                </span>
+            <li class="col-lg-2 col-md-2 small-6">
+                <span></span><img src="templets/default/images/cus_02_pre.jpg"/>
+                <p></p>
+            </li>
+            <li class="col-lg-2 col-md-2 small-6">
+                <span></span><img src="templets/default/images/cus_03_pre.jpg"/>
+                <p></p>
+            </li>
+            <li class="col-lg-2 col-md-2 small-6">
+                <span></span><img src="templets/default/images/cus_04_pre.jpg"/>
+                <p></p>
+            </li>
+            <li class="col-lg-2 col-md-2 small-6">
+                <span></span><img src="templets/default/images/cus_05_pre.jpg"/>
+                <p></p>
+            </li>
+            <li class="col-lg-2 col-md-2 small-6">
+                <span></span><img src="templets/default/images/cus_06_pre.jpg"/>
+                <p></p>
+            </li>
+            <li class="col-lg-2 col-md-2 small-6">
+                <span></span><img src="templets/default/images/cus_07_pre.jpg"/>
+                <p></p>
+            </li>
+            <li class="col-lg-2 col-md-2 small-6">
+                <span></span><img src="templets/default/images/cus_08_pre.jpg"/>
+                <p></p>
+            </li>
+            <li class="col-lg-2 col-md-2 small-6">
+                <span></span><img src="templets/default/images/cus_09_pre.jpg"/>
+                <p></p>
+            </li>
+            <li class="col-lg-2 col-md-2 small-6">
+                <span></span><img src="templets/default/images/cus_10_pre.jpg"/>
+                <p></p>
+            </li>
+            <li class="col-lg-2 col-md-2 small-6">
+                <span></span><img src="templets/default/images/cus_11_pre.jpg"/>
+                <p></p>
+            </li>
+            <li class="col-lg-2 col-md-2 small-6">
+                <span></span><img src="templets/default/images/cus_12_pre.jpg"/>
+                <p></p>
+            </li>
+            <li class="col-lg-2 col-md-2 small-6">
+                <span></span><img src="templets/default/images/cus_13_pre.jpg"/>
+                <p></p>
+            </li>
+            <li class="col-lg-2 col-md-2 small-6">
+                <span></span><img src="templets/default/images/cus_14_pre.jpg"/>
+                <p></p>
+            </li>
+            <li class="col-lg-2 col-md-2 small-6">
+                <span></span><img src="templets/default/images/cus_15_pre.jpg"/>
+                <p></p>
+            </li>
+            <li class="col-lg-2 col-md-2 small-6">
+                <span></span><img src="templets/default/images/cus_16_pre.jpg"/>
+                <p></p>
+            </li>
+            <li class="col-lg-2 col-md-2 small-6">
+                <span></span><img src="templets/default/images/cus_17_pre.jpg"/>
+                <p></p>
+            </li>
+            <li class="col-lg-2 col-md-2 small-6">
+                <span></span><img src="templets/default/images/cus_18_pre.jpg"/>
+                <p></p>
             </li>
         </ul>
     </div>
-    <div class="footer_front"> <img src="templets/default/images/front.png" height="100%" width="100%"> </div>
-    <!-- 在线客服 END -->
-    <script type="text/javascript">
-        window.onload = function () {
-            $('#menu ul li').each(function (j) {
-                $('#menu ul li').eq(j).removeClass("on");
-                $('#menu ul li span').eq(j).animate({
+    <p class="more"><a href="#partner.html">了解更多+</a></p>
+</div>
+<!-- 项目需求 -->
+<!-- <div class="section5">
+    <div class="wrap">
+        <h2>填写您的项目需求给我们。</h2>
+        <div class="write clearfix">
+            <input name="name" placeholder="称呼姓名" value="" class="text1" id="name" type="text" maxlength="10">
+            <input name="mobile" placeholder="联系电话" value="" class="text2" id="mobile" type="text" maxlength="11">
+            <input name="content" placeholder="描述您的需求，如APP开发、微信开发、网站建设等。" id="content" value="" class="text3" type="text" maxlength="300">
+            <input name="submit" value="提交项目需求" class="submit" id="submit" rel="" type="submit" onclick="return GoInput()">
+        </div>
+        <b>*请认真填写需求信息，我们会在24小时内与您取得联系。</b>
+    </div>
+</div> -->
+
+<!-- footer部分 -->
+<div class="footer" id="contact.html">
+    <div class="wrap clearfix">
+        <div class="left">
+            <h2>联系我们</h2>
+            <h3>地址：郑州市大学科技园东区7号楼2层5号</h3>
+            <h3>售前：13071065058（早8:00-晚8:00）</h3>
+            <h3>售后：18538580708（7*24小时）</h3>
+            <h3>QQ : 420466541</h3>
+            <h3>欢迎您来电咨询，我们将竭诚为您服务。</h3>
+        </div>
+        <div class="right">
+            <h2>使命及未来</h2>
+            <p>
+                我们秉承求实创新、不断超越的发展理念，愿帮助更多优秀企业及创业者实现移动互联网梦想，成为中国最具价值的移动互联网软件服务商。我们对移动互联网的未来充满信心，肩负实现中国企业互联网+转型升级的伟大使命，路虽坎坷，我们坚信目标必定达成。
+                未来属于强者，属于具有战略眼光的人，我们将和众多服务客户及合作伙伴共同成长，一起见证中国移动互联网的伟大变革。
+            </p>
+        </div>
+        <div class="copyright">
+            <p>COPYRIGHT (c) 2019 海西网络 版权所有 All RIGHTS RESERVED</p>
+            <p><a href="http://www.miitbeian.gov.cn/" target="_blank">豫ICP备14004382号-1</a></p>
+        </div>
+    </div>
+</div>
+<style type="text/css">
+    .bg-div {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, .5);
+        z-index: 50;
+    }
+
+    .body-static {
+        overflow: hidden !important;
+    }
+
+    .bg-div.hide {
+        display: none;
+    }
+</style>
+<div class="bg-div hide"></div>
+<!--底部蒙层end-->
+<script type="text/javascript">
+    $(function () {
+        $(".navbar-toggle").click(function () {
+            $(this).toggleClass("click");
+            $(".bg-div").toggleClass("hide");
+            $("body").toggleClass("body-static");
+            $(".navbar-form a").toggleClass("active");
+            $(".navbar-collapse").slideToggle();
+        });
+        $(".bg-div").click(function () {
+            $(".navbar-toggle").trigger("click");
+        });
+
+        var top = ($(window).height() - $(".modal-content").height()) / 2;
+        $(".model-down").click(function () {
+            $(".modal-content").css({position: 'absolute', 'top': top});
+        });
+        $(".model-down-1").click(function () {
+            $(".modal-content").css({position: 'absolute', 'top': top});
+        });
+
+        $(".weixin-logo-icon").mouseleave(function () {
+            $(this).prev().find(".popover").removeClass("hover");
+        }).mouseenter(function () {
+            $(this).prev().find(".popover").addClass("hover");
+        });
+        $(".shouji-logo-icon").mouseleave(function () {
+            $(this).prev().find(".popover").removeClass("hover");
+        }).mouseenter(function () {
+            $(this).prev().find(".popover").addClass("hover");
+        });
+
+        var navAgent = navigator.userAgent.toLowerCase();
+        if (navAgent.indexOf("thjk-app-ios") > -1 || navAgent.indexOf("thdoctor-app-ios") > -1 || navAgent.indexOf("thjk-app-android") > -1 || navAgent.indexOf("thdoctor-app-android") > -1) {
+            $(".navbar-form.navbar-right").hide();
+            $(".nav > li:last-child a").css({"border-bottom": "0"});
+        }
+
+        //$(".navbar-nav > li.click a").removeAttr("href");
+    });
+</script>
+<link href="templets/default/skrollr/theme-cobalt.css" rel="stylesheet" type="text/css" media="all">
+<div id="top"></div>
+<script type="text/javascript" src="templets/default/javascript/top.js"></script>
+<style type="text/css">
+    /*QQ浮窗*/
+    .qqkefu {
+        width: 160px;
+        position: fixed;
+        z-index: 100;
+        right: 0;
+        top: 200px;
+        transition: all .5s ease 0s;
+    }
+
+    .qqkefu.qqkefu-nome {
+        right: -130px;
+    }
+
+    .qqkefu.qqkefu-nome .qqkefu-left {
+        background-position: 0 0;
+    }
+
+    .qqkefu-left {
+        width: 35px;
+        *width: 30px;
+        height: 130px;
+        float: left;
+        margin-top: 40px;
+        background: url(templets/default/images/qqkefu.png) no-repeat -30px 0 #4c89d7;
+        cursor: pointer;
+        border-radius: 5px 0 0 5px;
+        overflow: hidden;
+    }
+
+    .rides-cs .floatL {
+        width: 30px;
+        float: left;
+        position: relative;
+        z-index: 1;
+        border-radius: 5px 0 0 5px;
+        overflow: hidden;
+    }
+
+    .qqkefu-right {
+        background: #4c89d7;
+        width: 125px;
+        float: right;
+        border-radius: 5px 0 0 5px;
+        padding: 5px 0 5px 5px;
+    }
+
+    .qqkefu-right-box {
+        background: #fff;
+        border-radius: 5px 0 0 5px;
+    }
+
+    .qqkefu-right-box ul {
+        margin: 0px;
+        list-style: none inside;
+        padding: 0px;
+    }
+
+    .qqkefu-right-box li {
+        height: 39px;
+        line-height: 39px;
+        border-bottom: 1px solid #e9e9e9;
+        padding: 0 0 0 15px;
+        margin: 0px;
+        font-size: 12px;
+        font-family: "Microsoft YaHei", "微软雅黑";
+    }
+
+    .qqkefu-right-box li.title {
+        color: #bbbbbb;
+        font-size: 14px;
+    }
+
+    .qqkefu-right-box li.title a {
+        color: #333333;
+        font-size: 12px;
+    }
+
+    .qqkefu-right-box li.title a:hover {
+        color: #4c89d7;
+        font-size: 12px;
+    }
+
+    .qqkefu-right-box li.title span {
+        color: #333333;
+        font-size: 12px;
+    }
+
+    .qqkefu-right-box li.second-last {
+        color: #333333;
+        font-size: 14px;
+    }
+
+    .qqkefu-right-box li.last {
+        border-bottom: none;
+        color: #333333;
+        font-size: 14px;
+    }
+
+    .qqkefu-right-box li i {
+        margin-right: 10px;
+    }
+
+    .qqkefu-right-box li i.ico-qq {
+        background: url(templets/default/images/qqkefu.png) no-repeat 0 -260px;
+        width: 15px;
+        height: 16px;
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    @media only screen and (max-width: 479px) {
+        #qqkefu {
+            display: none;
+        }
+
+        .izl-rmenu {
+            right: 10px;
+            bottom: 60px;
+        }
+    }
+
+    /* 移动端底部客服 */
+    .footer_front {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0px;
+        left: 0px;
+        z-index: 888;
+        transform-origin: 0px 0px 0px;
+        opacity: 1;
+        transform: scale(1, 1);
+        display: none;
+    }
+
+    #menu {
+        position: fixed;
+        bottom: 0px;
+        width: 100%;
+        height: 50px;
+        line-height: 44px;
+        z-index: 999;
+    }
+
+    #menu ul {
+        margin: 0 auto;
+        list-style-type: none;
+        width: 100%;
+        max-width: 500px;
+        height: 100%;
+        padding: 0px;
+    }
+
+    #menu ul li {
+        float: left;
+        width: 50%;
+        height: 100%;
+        text-align: center;
+        position: relative;
+        font-size: 14px;
+    }
+
+    #menu ul li .line {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        z-index: 30;
+        width: 1px;
+    }
+
+    #menu ul li .menu_li {
+        position: absolute;
+        top: 7px;
+        left: 5%;
+        z-index: 40;
+        width: 90%;
+        height: 36px;
+        line-height: 36px;
+        color: #fff;
+        border-radius: 3px;
+    }
+
+    #menu .phone_bottom_menu {
+        color: #fff;
+        text-decoration: blink;
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+
+    #menu ul li:nth-of-type(1) .menu_li {
+        background-color: #7fbcf3;
+    }
+
+    #menu ul li:nth-of-type(2) .menu_li {
+        background-color: #f4b10e;
+    }
+
+    #menu ul li:nth-of-type(3) .menu_li {
+        background-color: #f94a45;
+    }
+
+    #menu ul li .img_front {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        z-index: 30;
+        width: 100%;
+        height: 100%;
+        background-color: #000;
+        opacity: .65;
+    }
+
+    #menu ul li .img_front img {
+        width: 100%;
+        height: 100%;
+    }
+
+    #menu ul li span {
+        position: absolute;
+        bottom: -300px;
+        left: 50%;
+        width: 104px;
+        margin-left: -52px;
+        height: auto;
+        text-align: center;
+        z-index: 10;
+    }
+
+    #menu ul li span a {
+        display: block;
+        float: left;
+        width: 100%;
+        height: 43px;
+        line-height: 43px;
+        color: #454545;
+        text-decoration: none;
+        text-align: center;
+    }
+
+    #menu ul li .menu_li .icon {
+        width: 1.8em;
+        margin-right: 0.5em;
+        display: inline-block;
+        vertical-align: top;
+    }
+
+    #menu ul li .menu_li .icon.icon-phone {
+        width: 2em;
+    }
+</style>
+<!-- 在线客服 -->
+<div id="qqkefu" class="qqkefu">
+    <div class="qqkefu-left"></div>
+    <div class="qqkefu-right">
+        <div class="qqkefu-right-box">
+            <ul>
+                <li class="title">7×24h在线客服</li>
+                <li><i class="ico-qq"></i><a
+                        href="tencent://message/?Menu=yes&amp;uin=420466541&amp;Site=联系我们&amp;Service=200&amp;sigT=2a0e37386280486ada2b5d5e69ee49186ccae1257fd9e1c9598af1f0b9c916067002a57aaaec8c8d"
+                        target="_parent">客服1</a></li>
+
+                <li><i class="ico-qq"></i><a
+                        href="tencent://message/?Menu=yes&amp;uin=420466541&amp;Site=联系我们&amp;Service=200&amp;sigT=2a0e37386280486ada2b5d5e69ee49186ccae1257fd9e1c9598af1f0b9c916067002a57aaaec8c8d"
+                        target="_parent">客服2</a></li>
+                <li class="title">7×24h咨询热线</li>
+                <li class="second-last">13071065058</li>
+                <li class="title last">18538580708</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--底部咨询-->
+<div id="menu" style="display: none;">
+    <ul>
+        <!-- <li class="query_btn"> <img class="img_front" src="templets/default/images/front.png">
+          <div class="menu_li"> <i class="icon icon-search"></i> &nbsp;免费咨询 </div>
+          <span style="background-size: 100% auto; display: none; bottom: 0px;"> </span> </li> -->
+        <li>
+            <img class="img_front" src="templets/default/images/front.png">
+            <div class="menu_li"><a class="phone_bottom_menu" href="tel:13071065058"> <i class="icon icon-phone"><img
+                    src="templets/default/images/icon-tel.png"></i>免费通话 </a></div>
+        </li>
+        <li class="online_newqq">
+            <img class="img_front" src="templets/default/images/front.png">
+            <div class="menu_li"><i class="icon icon-qq"><img src="templets/default/images/icon-qq.png"></i>在线咨询</div>
+            <span style="background-size: 100% auto; bottom: 0px;" class="wap_app_qq">
+                    <img src="templets/default/images/navbg3.png" width="100%">
+                    <div class="wap_app_qq" style="position:absolute;top:0px;left:0px;width: 100%;"> <a
+                            href="http://wpa.qq.com/msgrd?v=3&amp;uin=420466541&amp;site=qq&amp;menu=yes">客服1</a> <a
+                            href="http://wpa.qq.com/msgrd?v=3&amp;uin=420466541&amp;site=qq&amp;menu=yes">客服2</a> </div>
+                </span>
+        </li>
+    </ul>
+</div>
+<div class="footer_front"><img src="templets/default/images/front.png" height="100%" width="100%"></div>
+<!-- 在线客服 END -->
+<script type="text/javascript">
+    window.onload = function () {
+        $('#menu ul li').each(function (j) {
+            $('#menu ul li').eq(j).removeClass("on");
+            $('#menu ul li span').eq(j).animate({
                     bottom: -$('#menu ul li span').eq(j).height()
                 },
-				100);
-            });
-        }
-        $(".online_newqq").click(function () {
-            if (!($(this).hasClass("on"))) {
-                $('#menu ul .on span').animate({
+                100);
+        });
+    }
+    $(".online_newqq").click(function () {
+        if (!($(this).hasClass("on"))) {
+            $('#menu ul .on span').animate({
                     bottom: -$('#menu ul .on span').height()
                 },
-				200);
-                $('#menu ul .on').removeClass("on");
-                $(this).addClass("on");
-                $(this).find("span").animate({
+                200);
+            $('#menu ul .on').removeClass("on");
+            $(this).addClass("on");
+            $(this).find("span").animate({
                     bottom: 55
                 },
-				200);
-                $('.footer_front').show();
-            } else {
-                $(this).find("span").animate({
+                200);
+            $('.footer_front').show();
+        } else {
+            $(this).find("span").animate({
                     bottom: -$(this).find("span").height()
                 },
-				200);
-                $(this).removeClass("on");
-                $('.footer_front').hide();
-            }
-        });
-        $('.footer_front').click(function () {
-            $('#menu ul .on span').animate({
+                200);
+            $(this).removeClass("on");
+            $('.footer_front').hide();
+        }
+    });
+    $('.footer_front').click(function () {
+        $('#menu ul .on span').animate({
                 bottom: -$('#menu ul .on span').height()
             },
             200);
-            $('#menu ul .on').removeClass("on");
-            $(this).hide();
-        });
-        $('.query_btn').on('click',
+        $('#menu ul .on').removeClass("on");
+        $(this).hide();
+    });
+    $('.query_btn').on('click',
         function () {
             layer.open({
                 type: 2,
@@ -1228,83 +1056,86 @@
             });
             return false;
         });
-        (function () {
-            function browserRedirect() {
-                var sUserAgent = navigator.userAgent.toLowerCase();
-                var bIsIpad = sUserAgent.match(/ipad/i) == "ipad";
-                var bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";
-                var bIsMidp = sUserAgent.match(/midp/i) == "midp";
-                var bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4";
-                var bIsUc = sUserAgent.match(/ucweb/i) == "ucweb";
-                var bIsAndroid = sUserAgent.match(/android/i) == "android";
-                var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";
-                var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
-                if (bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) {
-                    this_Phone = 1;
-                };
-            };
-            function getQuery_Qq_String(name, qq_search) {
-                var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
-                var r = qq_search.substr(1).match(reg);
-                if (r != null) return unescape(r[2]);
-                return null;
-            };
-            function isWeiXin() {
-                var ua = window.navigator.userAgent.toLowerCase();
-                if (ua.match(/MicroMessenger/i) == 'micromessenger') {
-                    return true;
-                } else {
+    (function () {
+        function browserRedirect() {
+            var sUserAgent = navigator.userAgent.toLowerCase();
+            var bIsIpad = sUserAgent.match(/ipad/i) == "ipad";
+            var bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";
+            var bIsMidp = sUserAgent.match(/midp/i) == "midp";
+            var bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4";
+            var bIsUc = sUserAgent.match(/ucweb/i) == "ucweb";
+            var bIsAndroid = sUserAgent.match(/android/i) == "android";
+            var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";
+            var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
+            if (bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) {
+                this_Phone = 1;
+            }
+            ;
+        };
+
+        function getQuery_Qq_String(name, qq_search) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+            var r = qq_search.substr(1).match(reg);
+            if (r != null) return unescape(r[2]);
+            return null;
+        };
+
+        function isWeiXin() {
+            var ua = window.navigator.userAgent.toLowerCase();
+            if (ua.match(/MicroMessenger/i) == 'micromessenger') {
+                return true;
+            } else {
+                return false;
+            }
+        };
+        var this_Phone = 0;
+        browserRedirect();
+        if (this_Phone) {
+            $("#menu").show();
+        } else {
+            $("#qqkefu").show();
+        }
+        if (this_Phone && (!isWeiXin())) {
+            $(".wap_app_qq a").each(function () {
+                var $this = $(this);
+                var app_qq = $this.attr("href");
+                var temp = app_qq.substring(app_qq.indexOf("?"));
+                app_qq = getQuery_Qq_String("uin", temp);
+                $this.attr("href", "mqq://im/chat?chat_type=wpa&uin=" + app_qq + "&version=1&src_type=web");
+            });
+        }
+        ;
+    })();
+    $('.qqkefu-left').click(function () {
+        if ($(this).parent().attr('class') == 'qqkefu') {
+            $(this).parent().addClass('qqkefu-nome');
+        } else {
+            $(this).parent().removeClass('qqkefu-nome');
+        }
+    });
+    $(function () {
+        //锚点跳转滑动效果
+        $('a[href*=#],area[href*=#]').click(function () {
+            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+                var $target = $(this.hash);
+                $target = $target.length && $target || $('[id="' + this.hash.slice(1) + '"]');
+                if ($target.length) {
+                    var targetOffset = $target.offset().top;
+                    $('html,body').animate({
+                            scrollTop: targetOffset
+                        },
+                        1000);
                     return false;
                 }
-            };
-            var this_Phone = 0;
-            browserRedirect();
-            if (this_Phone) {
-                $("#menu").show();
-            } else {
-                $("#qqkefu").show();
-            }
-            if (this_Phone && (!isWeiXin())) {
-                $(".wap_app_qq a").each(function () {
-                    var $this = $(this);
-                    var app_qq = $this.attr("href");
-                    var temp = app_qq.substring(app_qq.indexOf("?"));
-                    app_qq = getQuery_Qq_String("uin", temp);
-                    $this.attr("href", "mqq://im/chat?chat_type=wpa&uin=" + app_qq + "&version=1&src_type=web");
-                });
-            };
-        })();
-        $('.qqkefu-left').click(function () {
-            if ($(this).parent().attr('class') == 'qqkefu') {
-                $(this).parent().addClass('qqkefu-nome');
-            } else {
-                $(this).parent().removeClass('qqkefu-nome');
             }
         });
-        $("input").placeholder();
-        $(function(){  
-            //锚点跳转滑动效果  
-            $('a[href*=#],area[href*=#]').click(function() {  
-                if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {  
-                    var $target = $(this.hash);  
-                    $target = $target.length && $target || $('[id="' + this.hash.slice(1) + '"]');  
-                    if ($target.length) {  
-                        var targetOffset = $target.offset().top;  
-                        $('html,body').animate({  
-                                    scrollTop: targetOffset  
-                                },  
-                                1000);  
-                        return false;  
-                    }  
-                }  
-            });  
-        });
-        $('.navbar-nav li a').click(function(){
-            $(this).parent().parent().find('li').removeClass("click").find('.line-top').remove();
-            $(this).parent().addClass("click").append($('<p class="line-top"></p>'));
-            $(this).blur();
-            return true;
-        });
-    </script>
+    });
+    $('.navbar-nav li a').click(function () {
+        $(this).parent().parent().find('li').removeClass("click").find('.line-top').remove();
+        $(this).parent().addClass("click").append($('<p class="line-top"></p>'));
+        $(this).blur();
+        return true;
+    });
+</script>
 </body>
 </html>

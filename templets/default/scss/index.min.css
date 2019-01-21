@@ -258,7 +258,7 @@ padding-right:0
 .logo-pc-div {
 	/*background-color:#fff;*/
 	margin-top:-15px;
-	width:383px;
+	width:240px;
 	height:80px;
 	padding-top:10px;
 	margin-left:20px;
@@ -266,8 +266,8 @@ padding-right:0
 .ac-familybrowser-icon {
 	background-repeat:no-repeat;
 	background-image:url("/templets/default/images/logo.png");
-	background-size:383px 59px;
-	width:383px;
+	background-size:240px 59px;
+	width:240px;
 	height:59px;
 	margin:0 auto;
 	background-position:center;
